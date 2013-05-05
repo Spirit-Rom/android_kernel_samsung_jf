@@ -78,17 +78,13 @@ enum wiimote_devtype {
 	WIIMOTE_DEV_GEN10,
 	WIIMOTE_DEV_GEN20,
 	WIIMOTE_DEV_BALANCE_BOARD,
-	WIIMOTE_DEV_PRO_CONTROLLER,
 	WIIMOTE_DEV_NUM,
 };
 
 enum wiimote_exttype {
 	WIIMOTE_EXT_NONE,
 	WIIMOTE_EXT_UNKNOWN,
-	WIIMOTE_EXT_NUNCHUK,
-	WIIMOTE_EXT_CLASSIC_CONTROLLER,
 	WIIMOTE_EXT_BALANCE_BOARD,
-	WIIMOTE_EXT_PRO_CONTROLLER,
 	WIIMOTE_EXT_NUM,
 };
 
@@ -134,10 +130,8 @@ struct wiimote_state {
 	__u8 *cmd_read_buf;
 	__u8 cmd_read_size;
 
-	/* calibration/cache data */
+	/* calibration data */
 	__u16 calib_bboard[4][3];
-	__s16 calib_pro_sticks[4];
-	__u8 cache_rumble;
 };
 
 struct wiimote_data {
