@@ -1199,7 +1199,7 @@ static void wiimote_init_worker(struct work_struct *work)
 		changed = true;
 	}
 
-	if (changed || !wiimote_init_check(wdata))
+	if (!wiimote_init_check(wdata))
 		wiimote_init_hotplug(wdata);
 
 	if (changed)
@@ -1653,8 +1653,6 @@ static ssize_t wiimote_ext_show(struct device *dev,
 		return sprintf(buf, "classic\n");
 	case WIIMOTE_EXT_BALANCE_BOARD:
 		return sprintf(buf, "balanceboard\n");
-	case WIIMOTE_EXT_PRO_CONTROLLER:
-		return sprintf(buf, "procontroller\n");
 	case WIIMOTE_EXT_UNKNOWN:
 		/* fallthrough */
 	default:
@@ -1701,8 +1699,6 @@ static ssize_t wiimote_dev_show(struct device *dev,
 		return sprintf(buf, "gen20\n");
 	case WIIMOTE_DEV_BALANCE_BOARD:
 		return sprintf(buf, "balanceboard\n");
-	case WIIMOTE_DEV_PRO_CONTROLLER:
-		return sprintf(buf, "procontroller\n");
 	case WIIMOTE_DEV_PENDING:
 		return sprintf(buf, "pending\n");
 	case WIIMOTE_DEV_UNKNOWN:
