@@ -599,20 +599,6 @@ static const __u8 * const wiimote_devtype_mods[WIIMOTE_DEV_NUM] = {
 		WIIMOD_NO_MP,
 		WIIMOD_NULL,
 	},
-	[WIIMOTE_DEV_PRO_CONTROLLER] = (const __u8[]) {
-		WIIMOD_BATTERY,
-		WIIMOD_LED1,
-		WIIMOD_LED2,
-		WIIMOD_LED3,
-		WIIMOD_LED4,
-		WIIMOD_NO_MP,
-		WIIMOD_NULL,
-	},
-	[WIIMOTE_DEV_BALANCE_BOARD] = (const __u8[]) {
-		WIIMOD_BATTERY,
-		WIIMOD_LED1,
-		WIIMOD_NULL,
-	},
 };
 
 static void wiimote_modules_load(struct wiimote_data *wdata,
