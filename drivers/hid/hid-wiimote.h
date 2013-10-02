@@ -133,8 +133,9 @@ struct wiimote_state {
 	__u8 *cmd_read_buf;
 	__u8 cmd_read_size;
 
-	/* calibration data */
+	/* calibration/cache data */
 	__u16 calib_bboard[4][3];
+	__u8 cache_rumble;
 };
 
 struct wiimote_data {
