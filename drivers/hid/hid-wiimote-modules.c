@@ -174,8 +174,6 @@ static void wiimod_rumble_remove(const struct wiimod_ops *ops,
 
 	cancel_work_sync(&wdata->rumble_worker);
 
-	cancel_work_sync(&wdata->rumble_worker);
-
 	spin_lock_irqsave(&wdata->state.lock, flags);
 	wiiproto_req_rumble(wdata, 0);
 	spin_unlock_irqrestore(&wdata->state.lock, flags);
